@@ -1,0 +1,43 @@
+.logo {
+  background-image: url("./assets/image/vrt-logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 79px;
+  height: 47px;
+  margin: 24px auto;
+}
+
+.collapse .menu-sidebar {
+  justify-content: center;
+}
+
+.menu-sidebar {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  width: 100%;
+  color: #fffff1;
+  text-align: center;
+}
+
+.menu-sidebar.collapse {
+  justify-content: center;
+}
+
+.menu-sidebar.active {
+  background-color: #1890ff;
+}
+
+.menu-sidebar:hover.active {
+  color: #ffffff;
+}
+
+.menu-sidebar p {
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+.ant-checkbox-disabled{
+  display: none!important;
+}

@@ -1,0 +1,15 @@
+.title{
+    text-transform: uppercase;
+    margin-left:16px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content{
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px 16px;
+    margin-top:24px;
+}

@@ -1,0 +1,37 @@
+.prevItem {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 2px;
+}
+
+.prevItemRevert {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: -3px;
+  right: -3px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(208, 29, 29, 0.8);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.revertAll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50px;
+    height:50px;
+    border:1px solid #919191;
+    color:#919191;
+    cursor: pointer;
+}
+
+.prevItem:hover .prevItemRevert{
+    display: flex;
+}

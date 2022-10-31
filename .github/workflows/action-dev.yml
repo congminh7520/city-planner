@@ -1,0 +1,30 @@
+name: github-action-develop
+env:
+      ###GITHUB_REPOSITORY: ${{ github.repository }}
+      DEPLOY_PATH: /home/ubuntu/app-dev/${{ github.repository }}
+      
+on:
+  push:
+    branches: 
+     - develop
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: actions-runner-mollyverse
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'develop'
+      # Runs a single command using the runners shell
+      - name: Build source code
+        #continue-on-error: true
+        run: echo $DEPLOY_PATH
+      - run: cp .env.dev .env
+      - run: source ~/.nvm/nvm.sh && nvm install v14.17.3 && nvm use v14.17.3 && node -v && export NODE_OPTIONS=--max_old_space_size=8192 && npm install && npm run build
+      - name: Deploy source code
+        if: always ()
+        run: mkdir -p $DEPLOY_PATH && rsync -hraz --no-perms . $DEPLOY_PATH && sudo nginx -s reload
+      #- run: rsync -hraz --no-perms . $DEPLOY_PATH
+      #- run: sudo nginx -s reload

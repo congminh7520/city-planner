@@ -1,0 +1,9 @@
+.action{
+    display: flex;
+    align-items: center;
+}
+
+.or{
+    margin:0 6px;
+    font-weight: 600;
+}
